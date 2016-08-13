@@ -14,13 +14,13 @@
 <body>
     <div class="main">
         <div class="content">
-            <p class="text"><img vspace="10" hspace="10" src="img/lib_img.png" width="128" height="128"></p>
+            <p class="text"><img vspace="10" hspace="20" src="img/lib_icon.png" width="90" height="90"></p>
             <p class="text">Онлайн библиотека</p>
         </div>
         <div class="login">
             <form class="form" action="pages/main.jsp" method="post">
                 <input type="text" name="username" class="name_inp">
-                <button class="sub_btn" type="submit">sign in</button>
+                <button class="btn" type="submit">Войти</button>
             </form>
         </div>
         <div class="footer">

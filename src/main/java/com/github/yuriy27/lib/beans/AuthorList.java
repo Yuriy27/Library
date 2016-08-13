@@ -13,7 +13,20 @@ import java.util.ArrayList;
  */
 public class AuthorList {
 
-    private ArrayList<Author> authorList = new ArrayList<Author>();
+    private ArrayList<Author> authorList;
+
+    private static AuthorList instance;
+
+    public static AuthorList getInstance() {
+        if (instance == null) {
+            instance = new AuthorList();
+        }
+        return instance;
+    }
+
+    private AuthorList() {
+        authorList = new ArrayList<Author>();
+    }
 
     public ArrayList<Author> getAuthors() {
         Connection conn = null;
@@ -22,7 +35,7 @@ public class AuthorList {
         try {
             conn = Database.getConnection();
             st = conn.createStatement();
-            rs = st.executeQuery("select * from library.author");
+            rs = st.executeQuery("select * from library.author ORDER by fio");
             while (rs.next()) {
                 Author author = new Author(rs.getString("fio"));
                 authorList.add(author);
