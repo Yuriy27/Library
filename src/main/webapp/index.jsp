@@ -15,8 +15,7 @@
     <div class="main">
         <div class="content">
             <p class="text"><img vspace="10" hspace="10" src="img/lib_img.png" width="128" height="128"></p>
-            <p class="text">Welcome to online library</p>
-            <p class="text">Now project is in active development</p>
+            <p class="text">Онлайн библиотека</p>
         </div>
         <div class="login">
             <form class="form" action="pages/main.jsp" method="post">

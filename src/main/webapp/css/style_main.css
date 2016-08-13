@@ -1,0 +1,22 @@
+body {
+    background-color: lightgray;
+    margin: 0px;
+}
+
+.container {
+    margin-left: 200px;
+    margin-right: 200px;
+    background-color: white;
+}
+
+.search_form {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.sidebar1 {
+    float: left;
+    margin: 10px;
+    padding-bottom: 10px;
+    width: 25%;
+}
