@@ -2,6 +2,8 @@
 <%@ page import="test.TestSQL" %>
 <%@ page import="com.github.yuriy27.lib.beans.AuthorList" %>
 <%@ page import="com.github.yuriy27.lib.beans.Author" %>
+<%@ page import="com.github.yuriy27.lib.beans.GenreList" %>
+<%@ page import="com.github.yuriy27.lib.beans.Genre" %>
 <html>
 <head>
     <title>Онлайн библиотека</title>
@@ -38,12 +40,12 @@
             <h4>Список авторов:</h4>
             <ul class="nav">
                 <%
-                    AuthorList authorList = AuthorList.getInstance();
-                    for (Author author : authorList.getAuthorList()) {
+                    GenreList genreList = GenreList.getInstance();
+                    for (Genre genre : genreList.getGenreList()) {
                 %>
                 <li>
                     <a href="#">
-                        <%=author.getName()%>
+                        <%=genre.getName()%>
                     </a>
                 </li>
                 <% } %>
