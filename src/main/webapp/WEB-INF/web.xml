@@ -4,6 +4,26 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
+
+    <jsp-config>
+        <jsp-property-group>
+            <display-name>header_and_footer</display-name>
+            <url-pattern>/pages/*</url-pattern>
+            <page-encoding>UTF-8</page-encoding>
+            <include-prelude>/WEB-INF/jspf/header.jspf</include-prelude>
+            <include-coda>/WEB-INF/jspf/footer.jspf</include-coda>
+        </jsp-property-group>
+    </jsp-config>
+
+    <servlet>
+        <servlet-name>ShowImage</servlet-name>
+        <servlet-class>com.github.yuriy27.lib.servlets.ShowImage</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowImage</servlet-name>
+        <url-pattern>/ShowImage</url-pattern>
+    </servlet-mapping>
+
     <resource-ref>
         <description>Primary database</description>
         <res-ref-name>jdbc/Library</res-ref-name>

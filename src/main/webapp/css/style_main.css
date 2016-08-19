@@ -132,3 +132,43 @@ li {
     background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
     text-decoration: none;
 }
+
+.book_list {
+    float: left;
+    background-color: white;
+}
+
+.book_list h3 {
+    text-align: center;
+}
+
+.book_info {
+    width: 210px;
+    height: 450px;
+    font-size: 12px;
+    margin: 15px;
+    float: left;
+}
+
+.book_title {
+    height: 50px;
+    float: left;
+}
+
+.book_title p{
+    color:#378de5;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.book_image {
+    height: 250px;
+    float: left;
+}
+
+.book_details {
+    margin-top: 10px;
+    float: left;
+}

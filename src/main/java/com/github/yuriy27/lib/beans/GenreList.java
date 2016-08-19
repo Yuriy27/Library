@@ -13,9 +13,9 @@ import java.util.ArrayList;
  */
 public class GenreList {
 
-    private ArrayList<Genre> genreList;
+    private ArrayList<Genre> genreList = new ArrayList<Genre>();
 
-    private static GenreList instance;
+    /*private static GenreList instance;
 
     public static GenreList getInstance() {
         if (instance == null)
@@ -25,7 +25,7 @@ public class GenreList {
 
     private GenreList() {
         genreList = new ArrayList<Genre>();
-    }
+    }*/
 
     private ArrayList<Genre> getGenres() {
         Connection conn = null;
@@ -36,7 +36,7 @@ public class GenreList {
             st = conn.createStatement();
             rs = st.executeQuery("SELECT * FROM library.genre ORDER BY name");
             while (rs.next()) {
-                Genre genre = new Genre(rs.getString("name"));
+                Genre genre = new Genre(rs.getString("name"), rs.getLong("id"));
                 genreList.add(genre);
             }
         } catch (Exception e) {

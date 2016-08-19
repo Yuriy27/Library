@@ -9,6 +9,7 @@ import java.util.Date;
 public class Book {
 
     private String name;
+    private long id;
     private byte[] content;
     private int pageCount;
     private String isbn;
@@ -16,7 +17,15 @@ public class Book {
     private String genre;
     private String publisher;
     private Date publishDate;
-    private Image image;
+    private byte[] image;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -82,11 +91,11 @@ public class Book {
         this.publishDate = publishDate;
     }
 
-    public Image getImage() {
+    public byte[] getImage() {
         return image;
     }
 
-    public void setImage(Image image) {
+    public void setImage(byte[] image) {
         this.image = image;
     }
 }

@@ -9,11 +9,12 @@ import java.sql.Connection;
  */
 public class Database {
 
-    private static Connection conn;
-    private static InitialContext ic;
-    private static DataSource ds;
+
 
     public static Connection getConnection() {
+        Connection conn = null;
+        InitialContext ic;
+        DataSource ds;
         try {
             ic = new InitialContext();
             ds = (DataSource) ic.lookup("java:comp/env/jdbc/Library");
