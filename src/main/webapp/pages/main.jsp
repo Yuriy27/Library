@@ -4,10 +4,6 @@
 
         <%@ include file="../WEB-INF/jspf/left_menu.jspf"%>
 
-        <div class="content">
-            <h1>&nbsp;</h1>
-            <p>&nbsp;</p>
-        </div>
 
     </div>
 </body>

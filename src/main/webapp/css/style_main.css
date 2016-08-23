@@ -3,11 +3,11 @@ body {
     margin: 0px;
     padding: 0;
     font: 100%/1.4 Verdina, Arial, Helvetica, sans-serif;
+    height: 100%;
 }
 
 .container {
     width: 1000px;
-    height: 800px;
     margin: 0 auto;
     background-color: white;
 }
@@ -37,9 +37,9 @@ body {
 .sidebar1 {
     float: left;
     margin: 10px;
+    margin-top: 0;
     padding-bottom: 10px;
-    width: 25%;
-    background-color: white;
+    width: 20%;
 }
 
 ul.nav a, ul.nav a:visited {
@@ -105,6 +105,9 @@ li {
     padding-top: 25px;
 }
 
+.header {
+    height:220px;
+}
 .search_btn {
     background: #3498db;
     background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
@@ -134,12 +137,14 @@ li {
 }
 
 .book_list {
+    width: 75%;
     float: left;
-    background-color: white;
 }
 
 .book_list h3 {
     text-align: center;
+    padding: 0;
+    margin: 0;
 }
 
 .book_info {
@@ -164,11 +169,17 @@ li {
 }
 
 .book_image {
-    height: 250px;
+    height: 260px;
     float: left;
 }
 
 .book_details {
     margin-top: 10px;
     float: left;
+}
+
+.center {
+    width: 100%;
+    float: left;
+    background-color: white;
 }
