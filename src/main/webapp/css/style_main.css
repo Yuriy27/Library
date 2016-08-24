@@ -98,6 +98,17 @@ li {
     padding-top: 35px;
 }
 
+.hello {
+    padding-top: 40px;
+    padding-right: 70px;
+    float: right;
+}
+
+.hello h5, h6 {
+    text-align: right;
+    margin-bottom: 5px;
+}
+
 .title {
     width: 100%;
     height: 100px;
@@ -147,6 +158,10 @@ li {
     margin: 0;
 }
 
+.book_list h6 {
+    text-align: left;
+}
+
 .book_info {
     width: 210px;
     height: 450px;
@@ -182,4 +197,28 @@ li {
     width: 100%;
     float: left;
     background-color: white;
+}
+
+.letters {
+    float: left;
+    height: 20px;
+    margin: 10px;
+    margin-top: 0;
+}
+
+.letters a {
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.letters p {
+    text-align: center;
+}
+
+.letters a:hover, a:active, a:focus {
+    color: #999;
 }

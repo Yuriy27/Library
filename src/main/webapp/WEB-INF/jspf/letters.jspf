@@ -1,0 +1,9 @@
+<jsp:useBean id="letterList" class="com.github.yuriy27.lib.beans.LetterList" scope="application"/>
+
+<div class="letters">
+        <%
+            for (char letter : letterList.getRuusianLetters()) {
+        %>
+        <a href="books.jsp?letter=<%=letter%>"><%=letter%></a>
+        <% } %>
+</div>

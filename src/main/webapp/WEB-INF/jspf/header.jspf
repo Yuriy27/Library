@@ -17,9 +17,20 @@
             <div class="desc">
                 <h3>Онлайн библиотека</h3>
             </div>
+            <div class="hello">
+                <%
+                    String user = request.getParameter("username");
+                    if (user == null) {
+                        user = (String) session.getAttribute("username");
+                    }
+                    session.setAttribute("username", user);
+                %>
+                <h5>Добро пожаловать <%=user%></h5>
+                <h6><a href="../index.jsp">Выход</a></h6>
+            </div>
         </div>
         <div class="search_div">
-            <form name="search_form" method="post">
+            <form name="search_form" method="post" action="books.jsp">
                 <!--<img style="padding-left: 20px" src="../img/search.jpg" width="32">-->
                 <input class="search_string" type="text" name="search_string" value="" size="100">
                 <input class="search_btn" type="submit" name="search_btn" value="Поиск">

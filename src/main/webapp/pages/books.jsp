@@ -1,23 +1,43 @@
 <%@ page import="com.github.yuriy27.lib.beans.Book" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="com.github.yuriy27.lib.enums.SearchType" %>
+
 <%@ include file="../WEB-INF/jspf/left_menu.jspf" %>
+<%@ include file="../WEB-INF/jspf/letters.jspf" %>
+
+<jsp:useBean id="bookList" class="com.github.yuriy27.lib.beans.BookList" scope="page"/>
 
 <%
     request.setCharacterEncoding("UTF-8");
-    long genreId = 0L;
+    ArrayList<Book> list = null;
+
     try {
-        genreId = Long.valueOf(request.getParameter("genre_id"));
+        if (request.getParameter("letter") != null) {
+            String letter = request.getParameter("letter");
+            list = bookList.getBooksByLetter(letter);
+        } else {
+            if (request.getParameter("search_string") != null) {
+                String search = request.getParameter("search_string");
+                SearchType type = SearchType.TITLE;
+                if (request.getParameter("search_option").equals("Автор")) {
+                    type = SearchType.AUTHOR;
+                }
+                list = bookList.getBooksBySearch(search, type);
+            } else {
+                long genreId = 0L;
+                genreId = Long.valueOf(request.getParameter("genre_id"));
+                list = bookList.getBooksByGenre(genreId);
+            }
+        }
     } catch (Exception e) {
         e.printStackTrace();
     }
 %>
 
-<jsp:useBean id="bookList" class="com.github.yuriy27.lib.beans.BookList" scope="page"/>
-
 <div class="book_list">
     <h3>${param.name}</h3>
+    <h6>Найдено книг: <%=list.size()%></h6>
     <%
-        ArrayList<Book> list = bookList.getBooksByGenre(genreId);
         session.setAttribute("currentBookList", list);
         for (Book book : list) {
     %>

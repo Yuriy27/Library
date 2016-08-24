@@ -15,18 +15,6 @@ public class GenreList {
 
     private ArrayList<Genre> genreList = new ArrayList<Genre>();
 
-    /*private static GenreList instance;
-
-    public static GenreList getInstance() {
-        if (instance == null)
-            instance = new GenreList();
-        return instance;
-    }
-
-    private GenreList() {
-        genreList = new ArrayList<Genre>();
-    }*/
-
     private ArrayList<Genre> getGenres() {
         Connection conn = null;
         Statement st = null;
