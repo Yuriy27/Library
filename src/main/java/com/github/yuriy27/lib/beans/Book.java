@@ -1,11 +1,14 @@
 package com.github.yuriy27.lib.beans;
 
+import com.github.yuriy27.lib.db.Database;
+
 import java.awt.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Date;
 
-/**
- * Created by Юра on 14.08.2016.
- */
 public class Book {
 
     private String name;
@@ -18,6 +21,33 @@ public class Book {
     private String publisher;
     private Date publishDate;
     private byte[] image;
+
+    public void loadContent() {
+        Connection conn = null;
+        Statement st = null;
+        ResultSet rs = null;
+        try {
+            conn = Database.getConnection();
+            st = conn.createStatement();
+            st.executeUpdate("USE library");
+            rs = st.executeQuery("SELECT content FROM book WHERE id=" + getId());
+            while (rs.next())
+                setContent(rs.getBytes("content"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (st != null)
+                    st.close();
+                if (rs != null)
+                    rs.close();
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     public long getId() {
         return id;

@@ -10,24 +10,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-/**
- * Created by Юра on 14.08.2016.
- */
 public class BookList {
 
     private ArrayList<Book> bookList = new ArrayList<Book>();
-
-    /*private static BookList instance;
-
-    private BookList() {
-        bookList = new ArrayList<Book>();
-    }
-
-    public static BookList getInstance() {
-        if (instance == null)
-            instance = new BookList();
-        return instance;
-    }*/
 
     private ArrayList<Book> getBooks(String query) {
         Connection conn = null;

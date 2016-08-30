@@ -8,9 +8,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-/**
- * Created by Юра on 14.08.2016.
- */
 public class GenreList {
 
     private ArrayList<Genre> genreList = new ArrayList<Genre>();

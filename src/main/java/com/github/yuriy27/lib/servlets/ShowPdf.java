@@ -9,26 +9,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
-@WebServlet(name = "ShowImage")
-public class ShowImage extends HttpServlet {
+@WebServlet("/bookpdf")
+public class ShowPdf extends HttpServlet {
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("image/jpeg");
+            throws ServletException, IOException{
+        response.setContentType("application/pdf");
         OutputStream out = response.getOutputStream();
-        try {
-            int index = Integer.valueOf(request.getParameter("index"));
-            ArrayList<Book> books = (ArrayList<Book>) request.getSession(false).getAttribute("currentBookList");
-            Book book = books.get(index);
-            byte[] image = book.getImage();
-            response.setContentLength(image.length);
-            out.write(image);
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            out.close();
-        }
+        ArrayList<Book> list = (ArrayList<Book>) request.getSession(false).getAttribute("currentBookList");
+        int index = Integer.valueOf(request.getParameter("index"));
+        Book book = list.get(index);
+        book.loadContent();
+        byte[] content = book.getContent();
+        response.setContentLength(content.length);
+        out.write(content);
+        out.close();
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

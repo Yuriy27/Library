@@ -18,6 +18,7 @@
         } else {
             if (request.getParameter("search_string") != null) {
                 String search = request.getParameter("search_string");
+                session.setAttribute("search_string", search);
                 SearchType type = SearchType.TITLE;
                 if (request.getParameter("search_option").equals("Автор")) {
                     type = SearchType.AUTHOR;
@@ -35,7 +36,6 @@
 %>
 
 <div class="book_list">
-    <h3>${param.name}</h3>
     <h6>Найдено книг: <%=list.size()%></h6>
     <%
         session.setAttribute("currentBookList", list);
@@ -55,7 +55,9 @@
             <br><strong>Количество страниц:</strong> <%=book.getPageCount() %>
             <br><strong>Год издания:</strong> <%=book.getPublishDate() %>
             <br><strong>Автор:</strong> <%=book.getAuthor() %>
-            <p style="margin:10px;"> <a href="#">Читать</a></p>
+            <p style="margin:10px;">
+                <a href="<%=request.getContextPath()%>/bookpdf?index=<%=list.indexOf(book)%>" target="_blank">Читать</a>
+            </p>
         </div>
     </div>
     <% } %>

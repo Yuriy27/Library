@@ -2,8 +2,13 @@
 
 <div class="letters">
         <%
+            String c = request.getParameter("letter");
             for (char letter : letterList.getRuusianLetters()) {
+                if (c != null && c.toUpperCase().charAt(0) == letter) {
         %>
-        <a href="books.jsp?letter=<%=letter%>"><%=letter%></a>
+                    <a style="color:red;" href="books.jsp?letter=<%=letter%>"><%=letter%></a>
+              <%} else {%>
+                    <a href="books.jsp?letter=<%=letter%>"><%=letter%></a>
+                <%}%>
         <% } %>
 </div>

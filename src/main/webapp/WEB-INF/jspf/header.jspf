@@ -32,7 +32,8 @@
         <div class="search_div">
             <form name="search_form" method="post" action="books.jsp">
                 <!--<img style="padding-left: 20px" src="../img/search.jpg" width="32">-->
-                <input class="search_string" type="text" name="search_string" value="" size="100">
+                <input class="search_string" type="text" name="search_string"
+                       value="<%=session.getAttribute("search_string") == null ? "" : session.getAttribute("search_string")%>" size="100">
                 <input class="search_btn" type="submit" name="search_btn" value="Поиск">
                 <select name="search_option">
                     <option>Автор</option>

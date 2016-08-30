@@ -4,12 +4,7 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 import java.sql.Connection;
 
-/**
- * Created by Юра on 13.08.2016.
- */
 public class Database {
-
-
 
     public static Connection getConnection() {
         Connection conn = null;

@@ -8,9 +8,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-/**
- * Created by Юра on 13.08.2016.
- */
 public class AuthorList {
 
     private ArrayList<Author> authorList;
